@@ -1,1 +1,1 @@
-Lista de desafios de programação. Vou riscar cada desafio que eu completar.
+Lista de desafios de programação. Vou riscar cada desafio que eu completar e fazer upload do projeto.
