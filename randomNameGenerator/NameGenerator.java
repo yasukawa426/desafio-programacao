@@ -3,18 +3,20 @@ import java.util.Random;
 public class NameGenerator {
     
     
+    public static int numeroAleatorio(int maximo){
+        Random rnd = new Random();
+        return rnd.nextInt(maximo);
+    }
 
     public static String nomeAleatorio(){
-        Random numeroAl = new Random();
-        int tamanhoNome = numeroAl.nextInt(20);
         String lexicon = "abcdefghijklmnopqrstuvwxyz";
         String nome = "";
         String sobreNome = "";
         String nomeFinal = "";
 
-        //pegando letras aleatorias para criar nome de tamanho aleatorio
-        for(int i = 0; i<= tamanhoNome; i++){
-            nome = nome + lexicon.charAt(numeroAl.nextInt(25));
+        //pegando letras aleatorias para criar nome de tamanho maximo 10 e minimo 2
+        for(int i = 0; i<= numeroAleatorio(8)+2; i++){
+            nome = nome + lexicon.charAt(numeroAleatorio(lexicon.length()-1));
 
             //colocando a primeira letra em maiuscula
             if(nome.length() == 1){
@@ -24,11 +26,9 @@ public class NameGenerator {
         
         System.out.println("Nome: " + nome);
 
-        tamanhoNome = numeroAl.nextInt(20);
-
-        //pegando letras aleatorias para criar sobrenome de tamanho aleatorio
-        for(int i = 0; i<= tamanhoNome; i++){
-            sobreNome = sobreNome + lexicon.charAt(numeroAl.nextInt(25));
+        //pegando letras aleatorias para criar sobrenome de tamanho maximo 15 e minimo 2
+        for(int i = 0; i<= numeroAleatorio(13) + 2; i++){
+            sobreNome = sobreNome + lexicon.charAt(numeroAleatorio(lexicon.length()-1));
 
             //colocando a primeira letra em maiuscula
             if(sobreNome.length() == 1){
