@@ -7,16 +7,30 @@ public class NameGenerator {
         Random rnd = new Random();
         return rnd.nextInt(maximo);
     }
+    public static boolean ePar(int x){
+        if(x % 2 == 0){
+            return true;
+        }
+        return false;
+    }
 
     public static String nomeAleatorio(){
-        String lexicon = "abcdefghijklmnopqrstuvwxyz";
+        String consoanteLexicon = "bcdfghjklmnopqrstuvwxyz";
+        String vogalLexicon = "aeiou";
         String nome = "";
         String sobreNome = "";
         String nomeFinal = "";
 
         //pegando letras aleatorias para criar nome de tamanho maximo 10 e minimo 2
         for(int i = 0; i<= numeroAleatorio(8)+2; i++){
-            nome = nome + lexicon.charAt(numeroAleatorio(lexicon.length()-1));
+            //Se par, escolhe uma vogal
+            if(ePar(i)){
+                nome = nome + vogalLexicon.charAt(numeroAleatorio(vogalLexicon.length()-1));  
+            }
+            else{
+                nome = nome + consoanteLexicon.charAt(numeroAleatorio(consoanteLexicon.length()-1));
+            }
+            
 
             //colocando a primeira letra em maiuscula
             if(nome.length() == 1){
@@ -24,21 +38,27 @@ public class NameGenerator {
             }
         }
         
-        System.out.println("Nome: " + nome);
 
         //pegando letras aleatorias para criar sobrenome de tamanho maximo 15 e minimo 2
         for(int i = 0; i<= numeroAleatorio(13) + 2; i++){
-            sobreNome = sobreNome + lexicon.charAt(numeroAleatorio(lexicon.length()-1));
-
+            if(ePar(i)){
+                sobreNome = sobreNome + vogalLexicon.charAt(numeroAleatorio(vogalLexicon.length()-1));  
+            }
+            else{
+                sobreNome = sobreNome + consoanteLexicon.charAt(numeroAleatorio(consoanteLexicon.length()-1));
+            }
+            
+            //colocando a primeira letra em maiuscula
+            if(nome.length() == 1){
+                nome = nome.toUpperCase();
+            }
             //colocando a primeira letra em maiuscula
             if(sobreNome.length() == 1){
                sobreNome=sobreNome.toUpperCase();
             }
         }
-        System.out.println("Sobrenome: " + sobreNome);
+        
         nomeFinal = nome + " " + sobreNome;
-
-        System.out.println("Nome Completo: " + nomeFinal);
         return nomeFinal;
     }
 
