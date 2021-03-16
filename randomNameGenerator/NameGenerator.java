@@ -15,6 +15,11 @@ public class NameGenerator {
         //pegando letras aleatorias para criar nome de tamanho aleatorio
         for(int i = 0; i<= tamanhoNome; i++){
             nome = nome + lexicon.charAt(numeroAl.nextInt(25));
+
+            //colocando a primeira letra em maiuscula
+            if(nome.length() == 1){
+                nome = nome.toUpperCase();
+            }
         }
         
         System.out.println("Nome: " + nome);
@@ -24,6 +29,11 @@ public class NameGenerator {
         //pegando letras aleatorias para criar sobrenome de tamanho aleatorio
         for(int i = 0; i<= tamanhoNome; i++){
             sobreNome = sobreNome + lexicon.charAt(numeroAl.nextInt(25));
+
+            //colocando a primeira letra em maiuscula
+            if(sobreNome.length() == 1){
+               sobreNome=sobreNome.toUpperCase();
+            }
         }
         System.out.println("Sobrenome: " + sobreNome);
         nomeFinal = nome + " " + sobreNome;
