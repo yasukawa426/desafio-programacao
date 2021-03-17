@@ -25,6 +25,8 @@ public class Teste {
                 JOptionPane.showMessageDialog(null, "Essa não é uma opção válida.");
             }
         }
+       
+       
         //converter para Fahrenheit
         else if(temperatura==2){
             temperatura = Integer.parseInt(JOptionPane.showInputDialog(null, "De qual temperatura você está convertendo? (Digite o número da opção)\n1-Celcius\n2-Kelvin"));
@@ -44,6 +46,8 @@ public class Teste {
                 JOptionPane.showMessageDialog(null, "Essa não é uma opção válida.");
             }
         }
+      
+      
         //converter para Kelvin
         else if(temperatura==3){
             temperatura = Integer.parseInt(JOptionPane.showInputDialog(null, "De qual temperatura você está convertendo? (Digite o número da opção)\n1-Celcius\n2-Fahrehint"));
@@ -63,10 +67,11 @@ public class Teste {
                 JOptionPane.showMessageDialog(null, "Essa não é uma opção válida.");
             }
         }
+      
+      
         //ta trollando
         else{
             JOptionPane.showMessageDialog(null, "Essa não é uma opção válida.");
         }
-        System.out.println(MetodosConversao.converterParaFahrenheit(281, "Kelvin" ));
     }
 }
