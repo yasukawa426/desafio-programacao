@@ -1,4 +1,4 @@
-package src.randomNameGenerator;
+package randomNameGenerator;
 
 import java.util.Random;
 
