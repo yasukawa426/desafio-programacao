@@ -1,3 +1,5 @@
 *.class
-nomes.txt
+*.txt
 *.bat
+
+
