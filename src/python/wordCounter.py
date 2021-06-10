@@ -1,4 +1,7 @@
-#Esse programa conta o numero de palavras em uma frase
+from spellchecker import SpellChecker
+import pprint
+import string
+#Esse programa conta o numero de palavras, paragrafos, orações e erros de digitação em sua frase
 
 # frase = input("Digite uma frase e eu contarei o número de palavras: ")
 frase = """Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
@@ -13,6 +16,10 @@ When she reached the first hills of the Italic Mountains, she had a last view ba
 numeroPalavras = 0;
 numeroParagrafos = 0;
 numeroFrase = 0;
+numeroTypos = 0;
+
+palavrasErradas = {}
+spell = SpellChecker(distance=1)
 
 for paragrafo in frase.splitlines():
     if paragrafo == '':
@@ -25,13 +32,25 @@ for paragrafo in frase.splitlines():
         # é uma palavra
         for palavra in paragrafo.split(" "):
             numeroPalavras += 1
+
+            #checando se ta td certo
+            palavraCorrigir = (palavra.translate(str.maketrans('', '', string.punctuation + '’'))).casefold()
+            palavraCorreta = (spell.correction(palavra.casefold())).translate(str.maketrans('', '', string.punctuation + '’'))
+            if palavraCorrigir != palavraCorreta:
+                numeroTypos += 1
+                palavrasErradas[palavraCorrigir] = palavraCorreta
         # é uma frase
         for frasE in paragrafo.split("."):
             if frasE != "":
                 # print(frasE)
                 numeroFrase += 1
+    
 
 # print(frase.split("."))
 print(f"Sua frase contem {numeroPalavras} palavras!")
 print(f"Sua frase contem {numeroParagrafos} paragrafos!")
 print(f"Sua frase contem {numeroFrase} orações!")
+print(f"Sua frase contem {numeroTypos} erros de digitação!")
+if numeroTypos >= 1:
+    print("Palavras erradas: ")
+    pprint.pprint(palavrasErradas)
