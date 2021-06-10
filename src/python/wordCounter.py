@@ -6,22 +6,31 @@ frase = """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam risus
 Suspendisse metus eros, vulputate vel sem a, ornare vehicula tellus. Praesent condimentum at quam ut varius. Mauris luctus eros eu tortor suscipit, at gravida odio condimentum. Nulla facilisi. Fusce pharetra enim id tempus posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ultrices malesuada placerat. Aliquam tincidunt feugiat augue, quis tempus ligula varius eu. Mauris sit amet blandit nibh, ut dictum diam. Quisque dapibus vulputate ipsum non feugiat. Phasellus turpis arcu, eleifend in turpis vel, auctor laoreet augue.
 
 Vestibulum ultricies lorem vel libero lobortis, quis vehicula mi sollicitudin. Integer ut sem aliquet, blandit erat at, bibendum magna. Etiam ut luctus risus, at laoreet purus. Nullam convallis nisi vehicula nulla sagittis sollicitudin. Pellentesque ornare libero est, in pretium nulla imperdiet at. Cras et leo pulvinar, accumsan sapien scelerisque, iaculis libero. In mi massa, porttitor sit amet varius nec, ornare ac felis. Aenean tempor quis sapien in fermentum. Integer mollis non dolor ut aliquam. Maecenas bibendum, urna eu feugiat ultrices, sapien metus pellentesque turpis, vel efficitur nulla odio non libero. Praesent bibendum purus eu rhoncus lacinia."""
-
+# frase = """O joão foir la. Ta bom neh kakakaka. kekw.
+# 
+# comer pao. Mas ta neh. okkkkkkkkk"""
 numeroPalavras = 0;
 numeroParagrafos = 0;
-
+numeroFrase = 0;
 
 for paragrafo in frase.splitlines():
     if paragrafo == '':
         continue
+    
+    # é um paragrafo
     else: 
-        # é um paragrafo
         numeroParagrafos += 1
 
+        # é uma palavra
         for palavra in paragrafo.split(" "):
-            # é uma palavra
             numeroPalavras += 1
+        # é uma frase
+        for frasE in paragrafo.split("."):
+            if frasE != "":
+                # print(frasE)
+                numeroFrase += 1
 
+# print(frase.split("."))
 print(f"Sua frase contem {numeroPalavras} palavras!")
 print(f"Sua frase contem {numeroParagrafos} paragrafos!")
-# print(frase.splitlines(), end="")
+print(f"Sua frase contem {numeroFrase} orações!")
