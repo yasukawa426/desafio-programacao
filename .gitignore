@@ -2,5 +2,6 @@
 *.txt
 *.bat
 *.json
+/node_modules/
 
 
