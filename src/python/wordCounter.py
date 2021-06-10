@@ -38,6 +38,7 @@ for paragrafo in frase.splitlines():
             palavraCorreta = (spell.correction(palavra.casefold())).translate(str.maketrans('', '', string.punctuation + '’'))
             if palavraCorrigir != palavraCorreta:
                 numeroTypos += 1
+                #cria uma chave no dicionario com palavraErrada: correção
                 palavrasErradas[palavraCorrigir] = palavraCorreta
         # é uma frase
         for frasE in paragrafo.split("."):
