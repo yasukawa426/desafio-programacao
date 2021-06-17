@@ -9,4 +9,8 @@ if idade > 1000:
 
 # digitou a idade
 else:
-    print("salve")
+    # print("salve")
+
+    # transforma em segundos
+    idade = idade * 31556926
+    print(f"Sua idade em segundos é: {idade}")
