@@ -49,7 +49,7 @@ if idade > 1000:
     # adiciona na idade
     idade += diasMais
 
-    print(f"Sua idade em segundos é: {idade}")
+    print(f"Sua idade em segundos é: {idade} segundos")
 
 
 # digitou a idade
@@ -58,6 +58,6 @@ else:
 
     # transforma em segundos
     idade = idade * SEGUNDOS_ANO
-    print(f"Sua idade em segundos é: {idade}")
+    print(f"Sua idade em segundos é: {idade} segundos")
 
 
