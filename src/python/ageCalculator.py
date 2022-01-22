@@ -14,7 +14,13 @@ def eBissexto( ano):
 SEGUNDOS_DIA = 86400
 SEGUNDOS_ANO = 31556926
 
-idade = int(input("Digite sua idade em anos ou digite o seu ano de nascimento: "))
+idade = None
+
+while idade == None:
+    try:
+        idade = int(input("Digite sua idade em anos ou digite o seu ano de nascimento: "))
+    except:
+        print("Escreve um numero direito mano")
 
 # significa q o usuario digitou o ano de nascimento
 if idade > 1000:
